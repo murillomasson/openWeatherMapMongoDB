@@ -18,7 +18,7 @@ coll = db[COLL]
 
 
 @app.get("/weather/{city}", response_model=dict)
-async def get_city(city):
+async def get_weather(city):
     geolocation = json.loads(
         requests.get(
                 f"https://api.openweathermap.org/geo/1.0/direct?q={city}"
@@ -46,5 +46,3 @@ async def get_city(city):
     
     return source
 
-# get_city("maringá")
-# get_city("London")
