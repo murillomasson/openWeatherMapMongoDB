@@ -4,12 +4,12 @@ import requests
 from pymongo import MongoClient
 
 # preencha as informações referentes à URI do MongoDB e a chave da API
-MONGO_CLIENT_URI = "mongodb+srv://weather_api:2Bq5c3eX0PU5RzuY@cluster0.egbsesh.mongodb.net/test"
-API_KEY = 'e264f9ab41b21d92ca4296b6b38aa1f4'
+
+MONGO_CLIENT_URI = " "
+API_KEY = " "
 DB = "weather"
 COLL = "cities"
-
-lang = 'pt_br'
+lang = "pt_br"
 
 app = FastAPI()
 client = MongoClient(MONGO_CLIENT_URI)
@@ -41,8 +41,8 @@ async def get_city(city):
     )
 
     data = json.loads(json_data)
-
     coll.insert_one(data)
+    
     return source
 
 # get_city("maringá")
