@@ -5,11 +5,11 @@ from pymongo import MongoClient
 
 # preencha as informações referentes à URI do MongoDB e a chave da API
 
-MONGO_CLIENT_URI = " "
-API_KEY = " "
+MONGO_CLIENT_URI = ""
+API_KEY = ""
 DB = "weather"
 COLL = "cities"
-lang = "pt_br"
+lang = 'pt_br'
 
 app = FastAPI()
 client = MongoClient(MONGO_CLIENT_URI)
@@ -20,10 +20,11 @@ coll = db[COLL]
 @app.get("/weather/{city}", response_model=dict)
 async def get_city(city):
     geolocation = json.loads(
-                requests.get(
-                    f"https://api.openweathermap.org/geo/1.0/direct?q={city}&limit=5&appid={API_KEY}&lang={lang}"
-                ).text
-            )
+        requests.get(
+                f"https://api.openweathermap.org/geo/1.0/direct?q={city}"
+                f"&limit=5&appid={API_KEY}&lang={lang}"
+            ).text
+    )
 
     lat = str(geolocation[0]['lat'])
     lon = str(geolocation[0]['lon'])
@@ -33,7 +34,7 @@ async def get_city(city):
                 f"https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}"
                 f"&appid={API_KEY}&lang={lang}&units=metric"
             ).text
-        )
+    )
 
     json_data = json.dumps(
         source,
@@ -46,3 +47,4 @@ async def get_city(city):
     return source
 
 # get_city("maringá")
+# get_city("London")
