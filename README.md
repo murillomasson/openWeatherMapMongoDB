@@ -1,4 +1,5 @@
-# Open Weather Map API MongoDB, FastAPI
+# Open Weather Map API 
+## MongoDB, FastAPI
 Aplicação realizada em FastAPI que busca latitude e longidade de uma cidade fornecida e, a partir dessas informações, retorna informações metereológicas e salva numa dada coleção no MongoDB.
 
 Para rodar a aplicação, por favor, siga esses passos:
