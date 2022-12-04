@@ -3,7 +3,7 @@ import json
 import requests
 from pymongo import MongoClient
 
-# preencha as informações referentes à URI do MongoDB e a chave da API
+# preencha as informações referentes à URI do MongoDB e à chave da API
 
 MONGO_CLIENT_URI = ""
 API_KEY = ""
@@ -39,7 +39,7 @@ async def get_weather(city):
     )
     
     for i in source["list"]:
-        data[i["dt_txt"], geolocation[0]["name"]] = [i]
+        data[i["dt_txt"]] = [i]
     
     coll.insert_one(
         json.loads(
@@ -53,4 +53,4 @@ async def get_weather(city):
         )
     )
 
-    return data
+    return {"city": geolocation[0]["name"], "timestamp": source["list"][0]["dt_txt"], "data": data}
