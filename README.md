@@ -23,6 +23,6 @@ uvicorn api:app --reload
 ```
 - Pronto! Faça suas consultas alterando o campo _cidade_ no link abaixo, de acordo com sua cidade escolhida:
 ```cmd
-https://127.0.0.1:8000/weather/{cidade}
+https://127.0.0.1:8000/{cidade}
 ```
 - Você pode consultar a conexão ao banco de dados, acessando seu perfil no MongoDB > Database > Browser Collections ou então _MongoDB Compass_ a partir da URI gerada no seu perfil (a mesma inserida aqui)
