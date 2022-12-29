@@ -1,28 +1,42 @@
 # Open Weather Map API 
 ## MongoDB, FastAPI
-Aplicação realizada em FastAPI que busca latitude e longitude de uma cidade fornecida e, a partir dessas informações, retorna informações metereológicas e salva numa dada coleção no MongoDB.
+FastAPI app that searches for latitude and longitude of a given city and, from this information, returns meteorological information and saves it in a given collection in MongoDB.
+To run the application, please follow the next steps:
 
-Para rodar a aplicação, por favor, siga esses passos:
-
-- Cadastre-se em Open Weather Map e retire uma chave de API na sessão "consultas para 5 dias": https://openweathermap.org/
-- Clone o repositório: 
+- Sign up for Open Weather Map and collect an API Key in the "3 hour forecast: 5 days" session: https://openweathermap.org/
+- Clone the repository: 
 ```cmd
 git clone https://github.com/murillomasson/openWeatherMapMongoDB.git
 ```
-- Instale os requerimentos:
+
+- Install all the requirements:
 ```cmd
 pip install -r requirements.txt
 ```
-- Registre-se em MongoDB Atlas: https://www.mongodb.com/cloud/atlas/register. Você pode seguir o tutorial de como criar um cluster e criar a conexão str: https://www.mongodb.com/docs/atlas/getting-started/
-- Abra o arquivo _api.py_ e altere as duas primeiras variáveis:
-1. `MONGO_CLIENT_URI` com sua string obtida em MongoDB Atlas
-2. `API_KEY` com sua chave obtida em Open Weather Map
-- Rode a aplicação no servidor local:
+
+- Sign up in MongoDB Atlas: https://www.mongodb.com/cloud/atlas/register.
+You can check here to see how to create a cluster and make a str connection:
+https://www.mongodb.com/docs/atlas/getting-started/
+
+- Open _api.py_ and modify:
+1. `MONGO_CLIENT_URI` with your MongoDB Atlas string
+2. `API_KEY` with your API Key from Open Weather Map
+
+- Run the application on localhost:
 ```cmd
 uvicorn api:app --reload
 ```
-- Pronto! Faça suas consultas alterando o campo _cidade_ no link abaixo, de acordo com sua cidade escolhida:
+
+- It's ready! Make your queries changing the field _city_:
 ```cmd
-https://127.0.0.1:8000/{cidade}
+https://127.0.0.1:8000/{city}
 ```
-- Você pode consultar a conexão ao banco de dados, acessando seu perfil no MongoDB > Database > Browser Collections ou então _MongoDB Compass_ a partir da URI gerada no seu perfil (a mesma inserida aqui)
+
+- You can check your database connection:
+1. Accessing your Mongo's profile > Database > Browser Collections
+2. _MongoDB Compass_ using your generated URI (`MONGO_CLIENT_URI`)
+
+- To run the tests:
+```cmd
+pdm run pytest -ssvv tests.py
+```
