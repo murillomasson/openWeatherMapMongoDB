@@ -33,7 +33,7 @@ pip install -r requirements.txt
 - Then copy the connection string
 
 - Open _api.py_ and modify:
-1. `MONGO_CLIENT_URI` with your MongoDB Atlas string, changing _<password>_ in the URI to your choosed password
+1. `MONGO_CLIENT_URI` with your MongoDB Atlas string, changing the password in URI to your choosed one
 2. `API_KEY` with your API Key from Open Weather Map
 
 - Run the application on localhost:
