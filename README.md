@@ -48,7 +48,7 @@ https://127.0.0.1:8000/{city}
 
 - You can check your database connection:
 1. Accessing your Mongo's profile > _Database > Browser Collections_
-Or:
+_Or:_
 2. Accessing _MongoDB Compass_ with your generated URI (`MONGO_CLIENT_URI`)
 
 - To run the tests:
