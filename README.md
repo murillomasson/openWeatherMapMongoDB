@@ -1,6 +1,8 @@
 # Open Weather Map API 
 ## MongoDB, FastAPI
 FastAPI app that searches for latitude and longitude of a given city and, from this information, returns meteorological information and saves it in a given collection in MongoDB.
+_It is advisable that you create a virtual environment to run the application below (the application has been tested on Windows)._
+
 To run the application, please follow the next steps:
 
 - Sign up for Open Weather Map and collect an API Key in the "3 hour forecast: 5 days" session: https://openweathermap.org/
@@ -18,17 +20,17 @@ pip install -r requirements.txt
 ```
 
 - Sign up in MongoDB Atlas: https://www.mongodb.com/cloud/atlas/register or Log-in: https://account.mongodb.com/account/login.
-- Click on _build a database_
-- Click on Create _shared_ for basic configuration options
-- _Create Cluster_
+- Click on:
+1. _Build a database_
+2. _Create_ (in _shared_, for basic configuration options)
+3. _Create Cluster_
 - Choose a _username_ and _password_
-You can check here how to create a cluster and make a str connection:
-https://www.mongodb.com/docs/atlas/getting-started/
-- Click on _Add My Current IP Adress_
-- _Finish and close_
-- _Connect_
-- _Connect using MongoDB Compass_
-- Copy the connection string
+- Click on: 
+4. _Add My Current IP Adress_
+5. _Finish and close_
+6. _Connect_
+7. _Connect using MongoDB Compass_
+- Then copy the connection string
 
 - Open _api.py_ and modify:
 1. `MONGO_CLIENT_URI` with your MongoDB Atlas string, changing _<password>_ in the URI to your choosed password
@@ -45,14 +47,14 @@ https://127.0.0.1:8000/{city}
 ```
 
 - You can check your database connection:
-1. Accessing your Mongo's profile > Database > Browser Collections
-2. _MongoDB Compass_ using your generated URI (`MONGO_CLIENT_URI`)
+1. Accessing your Mongo's profile > _Database > Browser Collections_
+2. Accessing _MongoDB Compass_ with your generated URI (`MONGO_CLIENT_URI`)
 
 - To run the tests:
-  ```cmd
+```cmd
 cd openWeatherMapMongoDB
 ```
-  ```cmd
+```cmd
 pdm init
 ```
 ```cmd
