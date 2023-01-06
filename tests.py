@@ -1,13 +1,9 @@
-from pymongo.errors import OperationFailure
 from fastapi.testclient import TestClient
-from weather import app, API_KEY, lang
-from datetime import datetime
+from api import app, API_KEY, lang, COLL, DB, coll
 from fastapi import status
 from icecream import ic
 import requests
-import pymongo
 import pytest
-import json
 
 client = TestClient(app)
 
@@ -157,23 +153,13 @@ async def test_api_request_weather_verify_02() -> None:
     assert response.status_code == status.HTTP_200_OK
 
 
-def database_connection_info():
-    try:
-        client = api.client
-        print(client.server_info())
-
-    except errors.ServerSelectionTimeoutError as error:
-        print(error)
-
-      
 def count_doc():
-    return print("O número atual de documentos na coleção '{}' do banco de dados '{}' é de {}.".format(
-        api.COLL,
-        api.DB,
-        api.coll.count_documents({})
+    return ic("O número atual de documentos na coleção '{}' do banco de dados '{}' é de {}.".format(
+        COLL,
+        DB,
+        coll.count_documents({})
         )
     )
 
 
-database_connection_info()
 count_doc()
