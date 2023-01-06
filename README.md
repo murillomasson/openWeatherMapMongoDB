@@ -17,7 +17,7 @@ cd openWeatherMapMongoDB
 pip install -r requirements.txt
 ```
 
-- Sign up in MongoDB Atlas: https://www.mongodb.com/cloud/atlas/register.
+- Sign up in MongoDB Atlas: https://www.mongodb.com/cloud/atlas/register or Log-in: https://account.mongodb.com/account/login.
 You can check here how to create a cluster and make a str connection:
 https://www.mongodb.com/docs/atlas/getting-started/
 
