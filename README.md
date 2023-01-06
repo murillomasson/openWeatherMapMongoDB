@@ -11,6 +11,9 @@ git clone https://github.com/murillomasson/openWeatherMapMongoDB.git
 
 - Install all the requirements:
 ```cmd
+cd openWeatherMapMongoDB
+```
+```cmd
 pip install -r requirements.txt
 ```
 
