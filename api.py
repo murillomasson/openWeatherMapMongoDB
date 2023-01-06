@@ -6,7 +6,7 @@ import json
 
 # preencha as informações referentes à URI do MongoDB e a chave da API
 API_KEY = ""
-lang = 'pt_br'
+lang = "pt_br"
 MONGO_CLIENT_URI = ""
 DB = "weather"
 COLL = "cities"
