@@ -45,6 +45,7 @@ uvicorn api:app --reload
 ```cmd
 https://127.0.0.1:8000/{city}
 ```
+_(your queries must not use accents and spacing is done with an underscore)_
 
 - You can check your database connection:
 1. Accessing your Mongo's profile > _Database > Browser Collections_
