@@ -18,11 +18,20 @@ pip install -r requirements.txt
 ```
 
 - Sign up in MongoDB Atlas: https://www.mongodb.com/cloud/atlas/register or Log-in: https://account.mongodb.com/account/login.
+- Click on _build a database_
+- Click on Create _shared_ for basic configuration options
+- _Create Cluster_
+- Choose a _username_ and _password_
 You can check here how to create a cluster and make a str connection:
 https://www.mongodb.com/docs/atlas/getting-started/
+- Click on _Add My Current IP Adress_
+- _Finish and close_
+- _Connect_
+- _Connect using MongoDB Compass_
+- Copy the connection string
 
 - Open _api.py_ and modify:
-1. `MONGO_CLIENT_URI` with your MongoDB Atlas string
+1. `MONGO_CLIENT_URI` with your MongoDB Atlas string, changing _<password>_ in the URI to your choosed password
 2. `API_KEY` with your API Key from Open Weather Map
 
 - Run the application on localhost:
@@ -40,6 +49,12 @@ https://127.0.0.1:8000/{city}
 2. _MongoDB Compass_ using your generated URI (`MONGO_CLIENT_URI`)
 
 - To run the tests:
+  ```cmd
+cd openWeatherMapMongoDB
+```
+  ```cmd
+pdm init
+```
 ```cmd
 pdm run pytest -ssvv tests.py
 ```
