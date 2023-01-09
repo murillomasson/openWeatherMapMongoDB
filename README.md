@@ -24,9 +24,9 @@ pip install -r requirements.txt
 1. _Build a database_
 2. _Create_ (in _shared_, for basic configuration options)
 3. _Create Cluster_
-- Choose a _username_ and _password_
+- Choose an _username_ and a _password_
 - Click on: 
-4. _Add My Current IP Adress_
+4. _Add My Current IP Address_
 5. _Finish and close_
 6. _Connect_
 7. _Connect using MongoDB Compass_
